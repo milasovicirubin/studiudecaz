@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Docs & Portal Interactiv</title>
+    <!-- Conectare la stilul extern CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigation Bar -->
+    <header>
+        <div class="header-container">
+            <div class="logo-area" onclick="showPage('acasa')">
+                <svg height="32" viewBox="0 0 16 16" width="32"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path></svg>
+                <a class="logo-title">GitHub Docs & Hub</a>
+            </div>
+            <ul class="nav-links">
+                <li><a id="nav-acasa" class="active" onclick="showPage('acasa')">Acasă</a></li>
+                <li><a id="nav-despre" onclick="showPage('despre')">Despre GitHub</a></li>
+                <li><a id="nav-comenzi" onclick="showPage('comenzi')">Comenzi Git</a></li>
+                <li><a id="nav-cautare" onclick="showPage('cautare')">Căutare Profil</a></li>
+                <li><button class="theme-toggle" onclick="toggleTheme()">🌓 Schimbă Tema</button></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Sectiune Hero de Căutare -->
+    <div class="hero-section">
+        <h1>Cum te putem ajuta astăzi?</h1>
+        <p>Ghidul tău complet pentru GitHub: documentație, explicații, comenzi rapide și instrument de căutare API.</p>
+        <div class="search-container">
+            <svg class="search-icon" height="16" viewBox="0 0 16 16" width="16"><path d="M10.68 11.74a6 6 0 1 1 1.06-1.06l4.25 4.25a.75.75 0 1 1-1.06 1.06l-4.25-4.25ZM11.5 7a4.5 4.5 0 1 0-9 0 4.5 4.5 0 0 0 9 0Z"></path></svg>
+            <input type="text" class="search-input" placeholder="Search for anything... (ex: repositories, git push, copilot)">
+        </div>
+    </div>
+
+    <!-- TAB 1: ACASĂ -->
+    <main id="page-acasa" class="page-content active">
+        <section class="docs-section">
+            <h2 class="docs-section-title">All docs (Toată documentația)</h2>
+            
+            <div class="docs-grid">
+                <!-- Coloana 1 -->
+                <div class="category-group">
+                    <h3>Get started</h3>
+                    <ul class="category-links">
+                        <li><a onclick="showPage('despre')">Start with GitHub</a></li>
+                        <li><a onclick="showPage('despre')">Noțiuni de bază Git</a></li>
+                        <li><a href="#">Account and profile</a></li>
+                        <li><a href="#">Subscriptions & billing</a></li>
+                    </ul>
+
+                    <h3 class="mt-section">Security and code quality</h3>
+                    <ul class="category-links">
+                        <li><a href="#">Security and vulnerability auditing</a></li>
+                        <li><a href="#">Secure your code</a></li>
+                        <li><a href="#">Dependabot alerts</a></li>
+                    </ul>
+                </div>
+
+                <!-- Coloana 2 -->
+                <div class="category-group">
+                    <h3>Collaborative coding</h3>
+                    <ul class="category-links">
+                        <li><a onclick="showPage('comenzi')">Repositories & Git</a></li>
+                        <li><a href="#">Pull requests</a></li>
+                        <li><a href="#">GitHub Discussions</a></li>
+                        <li><a href="#">Code search</a></li>
+                    </ul>
+
+                    <h3 class="mt-section">Client apps</h3>
+                    <ul class="category-links">
+                        <li><a href="#">GitHub CLI</a></li>
+                        <li><a href="#">GitHub Desktop</a></li>
+                        <li><a href="#">GitHub Mobile</a></li>
+                    </ul>
+                </div>
+
+                <!-- Coloana 3 -->
+                <div class="category-group">
+                    <h3>GitHub Copilot</h3>
+                    <ul class="category-links">
+                        <li><a href="#">Overview</a></li>
+                        <li><a href="#">Copilot Cloud Agent</a></li>
+                        <li><a href="#">Copilot Cookbook</a></li>
+                        <li><a href="#">Copilot CLI</a></li>
+                    </ul>
+
+                    <h3 class="mt-section">Project management</h3>
+                    <ul class="category-links">
+                        <li><a href="#">GitHub Issues</a></li>
+                        <li><a href="#">Projects</a></li>
+                        <li><a href="#">Search on GitHub</a></li>
+                    </ul>
+                </div>
+
+                <!-- Coloana 4 -->
+                <div class="category-group">
+                    <h3>CI/CD and DevOps</h3>
+                    <ul class="category-links">
+                        <li><a href="#">GitHub Actions</a></li>
+                        <li><a href="#">GitHub Packages</a></li>
+                        <li><a href="#">GitHub Pages</a></li>
+                    </ul>
+
+                    <h3 class="mt-section">Enterprise and teams</h3>
+                    <ul class="category-links">
+                        <li><a href="#">Organizations</a></li>
+                        <li><a href="#">Enterprise users</a></li>
+                        <li><a href="#">Authentication & SSO</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Carduri Informatice -->
+            <h2 class="docs-section-title mt-title">Noțiuni Esențiale</h2>
+            <div class="grid-cards">
+                <div class="card">
+                    <h3>Ce este GitHub?</h3>
+                    <p>Cea mai mare platformă de hosting din lume pentru cod sursă și colaborare software bazată pe sistemul Git.</p>
+                </div>
+                <div class="card">
+                    <h3>Git vs GitHub</h3>
+                    <p><strong>Git</strong> este sistemul local instalat pe calculatorul tău. <strong>GitHub</strong> este serviciul în cloud unde salvezi și partajezi proiectele.</p>
+                </div>
+                <div class="card">
+                    <h3>Comunitatea Open Source</h3>
+                    <p>Milioane de dezvoltatori colaborează gratuit la aplicații, librării și proiecte transparente pentru toată lumea.</p>
+                </div>
+            </div>
+
+            <!-- Banner Verde Vizual -->
+            <div class="graphic-banner">
+                <div>
+                    <h2>Începe să construiești astăzi pe GitHub</h2>
+                    <p>Învață cum să îți publici primul proiect în mai puțin de 5 minute.</p>
+                </div>
+                <div class="cubes">🧊🟩</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- TAB 2: DESPRE GITHUB -->
+    <main id="page-despre" class="page-content">
+        <section class="docs-section">
+            <h2 class="docs-section-title">Despre GitHub și Conceptele Cheie</h2>
+            <div class="card">
+                <p>GitHub a fost fondat în 2008 și este în prezent o companie subsidiară Microsoft. Este utilizat de peste 100 de milioane de dezvoltatori și companii pentru a stoca, gestiona și urmări modificările din codul lor sursă.</p>
+                <br>
+                <h4 class="about-subtitle">Termeni și funcționalități importante:</h4>
+                <ul class="about-list">
+                    <li><strong>Repository (Depozit / Repo):</strong> Folderul virtual al proiectului tău care conține fișierele, istoricul și versiunile codului.</li>
+                    <li><strong>Commit:</strong> O salvare/fotografie instantanee a modificărilor efectuate în fișiere.</li>
+                    <li><strong>Branch (Ramură):</strong> O versiune paralelă a depozitului tău pentru a lucra pe funcționalități noi fără a strica codul principal.</li>
+                    <li><strong>Pull Request (PR):</strong> O cerere oficială de a îmbina modificările dintr-o ramură în proiectul principal.</li>
+                    <li><strong>GitHub Actions:</strong> Instrument automatizat de integrare și livrare continuă (CI/CD) pentru testarea și publicarea codului.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- TAB 3: COMENZI GIT -->
+    <main id="page-comenzi" class="page-content">
+        <section class="docs-section">
+            <h2 class="docs-section-title">Ghid Esențial de Comenzi Git</h2>
+            
+            <div class="cmd-item">
+                <h4>1. Inițializarea unui depozit local</h4>
+                <p class="cmd-desc">Creează un depozit Git nou în directorul curent.</p>
+                <pre>git init</pre>
+            </div>
+
+            <div class="cmd-item">
+                <h4>2. Clonarea unui proiect existent de pe GitHub</h4>
+                <p class="cmd-desc">Descarcă o copie locală a unui proiect din cloud.</p>
+                <pre>git clone https://github.com/utilizator/nume-proiect.git</pre>
+            </div>
+
+            <div class="cmd-item">
+                <h4>3. Adăugarea și salvarea modificărilor (Commit)</h4>
+                <p class="cmd-desc">Pregătește fișierele modificate și creează o salvare cu mesaj.</p>
+                <pre>git add .
+git commit -m "Mesajul tău explicativ despre modificări"</pre>
+            </div>
+
+            <div class="cmd-item">
+                <h4>4. Trimiterea modificărilor pe GitHub</h4>
+                <p class="cmd-desc">Urcă commit-urile din calculator pe serverul GitHub.</p>
+                <pre>git push origin main</pre>
+            </div>
+
+            <div class="cmd-item">
+                <h4>5. Descărcarea celor mai recente modificări</h4>
+                <p class="cmd-desc">Actualizează codul local cu ce au lucrat colegii tăi pe GitHub.</p>
+                <pre>git pull origin main</pre>
+            </div>
+        </section>
+    </main>
+
+    <!-- TAB 4: CĂUTARE PROFIL -->
+    <main id="page-cautare" class="page-content">
+        <section class="docs-section">
+            <h2 class="docs-section-title">Căutare Profil Utilizator (GitHub REST API)</h2>
+            
+            <div class="search-api-card">
+                <label for="usernameInput" class="input-label">Introdu un username de pe GitHub:</label>
+                <div class="search-box-flex">
+                    <input type="text" id="usernameInput" placeholder="Ex: octocat, torvalds, gaearon..." class="search-input input-api">
+                    <button class="btn-submit" onclick="fetchProfile()">Caută Profil</button>
+                </div>
+
+                <div id="loading" class="status-loading">Se încarcă datele...</div>
+                <div id="error" class="status-error">Utilizatorul nu a fost găsit. Verificați numele introdus.</div>
+
+                <div id="profileResult" class="profile-result">
+                    <div class="profile-header">
+                        <img id="userAvatar" src="" alt="Avatar">
+                        <div>
+                            <h3 id="userName" class="user-title"></h3>
+                            <p id="userBio" class="user-bio"></p>
+                            <a id="userLink" href="#" target="_blank" class="user-link">Vezi profilul pe GitHub ↗</a>
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div>
+                            <strong id="userRepos" class="stat-number">0</strong>
+                            <p class="stat-label">Repositories</p>
+                        </div>
+                        <div>
+                            <strong id="userFollowers" class="stat-number">0</strong>
+                            <p class="stat-label">Urmăritori</p>
+                        </div>
+                        <div>
+                            <strong id="userFollowing" class="stat-number">0</strong>
+                            <p class="stat-label">Urmărește</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© GitHub Docs & Portal Interactiv. Reproducere și combinare completă a interfeței.</p>
+        <p class="footer-links">
+            <a href="#">Termeni</a> |
+            <a href="#">Confidențialitate</a> |
+            <a href="#">Securitate</a> |
+            <a href="#">Suport GitHub</a>
+        </p>
+    </footer>
+
+    <!-- Conectare la scriptul extern JS -->
+    <script src="script.js"></script>
+</body>
+</html>
